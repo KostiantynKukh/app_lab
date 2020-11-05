@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0; 
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a, a:hover {
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+html {
+  font-size: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 15px;  
+  margin: 0 auto;
+}
+
+/* HEADER START */
+
+.header {
+  background-color: rgb(249, 251, 252, 0.4);  
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 93px;  
+}
+
+.header__logo a {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fcae61;   
+}
+
+.header__logo span {
+  color: #242f51;
+  transition: 0.3s;
+
+}
+
+.header__logo:hover a {
+  color: #242f51;
+}
+
+.header__logo:hover span {
+  color: #fcae61;
+}
+
+
+.header__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__toggler {
+  display: none;
+}
+
+.nav__item {
+  display: inline-block;
+  margin-right: 35px;
+}
+
+.nav__item:last-child {
+  margin-right: 55px;
+}
+
+.nav__link {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #242f51;
+  position: relative;
+}
+
+.nav__link:before {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background-color: #242f51;
+  position: absolute;
+  bottom: -2px;
+  right: 0;  
+  transition: 0.3s;
+}
+
+.nav__link:hover::before {
+  width: 100%;
+  left: 0;
+}
+
+.header__link {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  border-radius: 29px;
+  padding: 19px 41px;
+  background-color: #2500f9;
+}
+
+.header__link:hover {
+  color: #fcae61;
+  background-color: #242f51;
+}
+
+@media (max-width: 1039.98px) {
+  
+  .header__wrapper {
+    padding-top: 40px;
+  }
+  
+  .nav__item {
+    margin-right: 15px;
+  }
+
+  .nav__item:last-child {
+    margin-right: 35px;
+  }
+
+  .header__link {
+    padding: 15px 30px;
+  }  
+}
+
+@media (max-width: 767.98px) {
+  .footer {
+    padding-top: 65px;
+  }
+
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+  }
+
+  .header__wrapper {
+    padding: 10px 15px;
+    position: relative;
+    z-index: 100;           
+  }
+
+  .header__wrapper::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fdfdfe;
+    width: 100%;
+    height: 65px;
+    z-index: 10;
+  }
+
+  body.locked {
+    overflow: hidden;
+  }
+
+  .header__logo {    
+    z-index: 10;
+  }
+
+  .header__menu {
+    width: 57%;
+  }
+
+  .header__link {
+    position: relative;
+    z-index: 10;
+    padding: 10px 20px;
+
+  }  
+  
+  .nav {
+    order: 1;    
+  }
+
+  .nav__list {    
+    position: fixed;
+    overflow: auto;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding-top: 90px;
+    background-color: #fdfdfe;
+    transition: 0.3s;
+    transform: translateY(-100%);    
+  }
+
+  .nav__list.active {
+    transform: translateY(0);
+  }
+
+  .nav__item {
+    display: block;
+    margin: 0 0 20px 0;
+    padding-left: 20px;
+  }
+
+  .nav__link {
+    font-size: 2.5rem;
+  }
+
+
+  /* TOGGLER START */
+
+  .nav__toggler {
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    z-index: 10;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;    
+  }  
+
+  .nav__toggler span {
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: #242f51;
+    position: absolute;
+    top: 12.5px;    
+  }
+
+  .nav__toggler.active span {
+    display: none;
+  }
+
+  .nav__toggler::before,
+  .nav__toggler::after {
+    content: '';
+    position: absolute;    
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: #242f51;
+    transition: 0.3s;
+  }
+
+  .nav__toggler::before {
+    top: 0;
+  }
+
+  .nav__toggler.active:before {
+    transform: rotate(45deg);
+    top: 12.5px;
+  }
+
+  .nav__toggler::after {
+    bottom: 0;
+  }
+
+  .nav__toggler.active:after {
+    transform: rotate(-45deg);
+    bottom: 12.5px;
+  }
+
+  /* TOGGLER END */
+
+}
+/* HEADER END */
+
+.footer {
+  font-size: 1.5rem;
+}
