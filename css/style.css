@@ -693,6 +693,10 @@ html {
   overflow: hidden;
 }
 
+.accordion__item:hover {
+  background-color: #d3d6da;
+}
+
 .accordion__item::after {
   content: '\002B';
   font-size: 35px;
