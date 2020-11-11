@@ -20,5 +20,22 @@ $('.accordion__item').click(function() {
 })
 
 //accordion end 
+
+
+// bg-parallax start
+
+$('body').on('mousemove', event => {
+  
+  const x = event.pageX / $(window).width();
+  const y = event.pageY / $(window).height();
+
+  $('.intro__bg').css(
+    'transform',
+    'translate(-' +x * 50 + 'px, -' +y * 50 + 'px)'
+  );
+})
+
+
+// bg-parallax end
   
 })
